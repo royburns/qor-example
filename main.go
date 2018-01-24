@@ -101,7 +101,8 @@ func main() {
 		bindatafs.AssetFS.Compile()
 	} else {
 		fmt.Printf("Listening on: %v\n", config.Config.Port)
-		if err := http.ListenAndServe(fmt.Sprintf(":%d", config.Config.Port), Application.NewServeMux()); err != nil {
+		// if err := http.ListenAndServe(fmt.Sprintf(":%d", config.Config.Port), Application.NewServeMux()); err != nil {
+		if err := http.ListenAndServe(fmt.Sprintf(":%d", 9003), Application.NewServeMux()); err != nil {
 			panic(err)
 		}
 	}
